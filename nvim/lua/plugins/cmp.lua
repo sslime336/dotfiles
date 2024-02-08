@@ -121,24 +121,5 @@ return {
             -- require('lspconfig')['lua_ls'].setup { capabilities = capabilities }
             -- require('lspconfig')['gopls'].setup { capabilities = capabilities }
         end
-    },
-    -- tabnine AI 辅助
-    {
-        'tzachar/cmp-tabnine',
-        event        = "InsertEnter",
-        dependencies = { "hrsh7th/nvim-cmp" },
-        build        = function()
-            local on_windows = 'powershell ./install.ps1' -- on Windows
-            local on_unix = './install.sh'                -- on Unix-like OS
-            local defalut_install_script = on_unix
-            local cur_os_path_separator = package.config:sub(1, 1)
-            if cur_os_path_separator == '\\' then
-                return on_windows
-            elseif cur_os_path_separator == '/' then
-                return on_unix
-            else
-                return defalut_install_script
-            end
-        end
-    },
+    }
 }

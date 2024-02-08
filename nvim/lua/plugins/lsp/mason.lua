@@ -32,8 +32,8 @@ function M.config()
         settings = {
             -- INFO: https://github.com/golang/tools/blob/master/gopls/doc/settings.md
             codelenses       = {
-                generate = false,  -- Don't show the `go generate` lens.
-                gc_details = true, -- Show a code lens toggling the display of gc's choices.
+                generate = false,   -- Don't show the `go generate` lens.
+                gc_details = false, -- Show a code lens toggling the display of gc's choices.
             },
             diagnosticsDelay = "250ms",
         },
@@ -41,7 +41,6 @@ function M.config()
     require("lspconfig").marksman.setup {}
     require("lspconfig").jsonls.setup {}
     require("lspconfig").taplo.setup {}
-    require("lspconfig").nimls.setup {}
 end
 
 return M
